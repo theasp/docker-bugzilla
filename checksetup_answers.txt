@@ -1,0 +1,3 @@
+$answer{'ADMIN_EMAIL'} = 'admin@bugzilla.org';
+$answer{'ADMIN_PASSWORD'} = 'admin';
+$answer{'ADMIN_REALNAME'} = 'admin';
