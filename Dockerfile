@@ -7,15 +7,14 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y  apache2
 RUN rm -rf /var/www/html
 
 # Make Bugzilla install Directory
-ADD https://ftp.mozilla.org/pub/webtools/bugzilla-5.0.2.tar.gz /tmp/
-RUN tar -xvf /tmp/bugzilla-5.0.2.tar.gz -C /var/www/
-RUN ln -s /var/www/bugzilla-5.0.2 /var/www/html
+ADD https://ftp.mozilla.org/pub/mozilla.org/webtools/bugzilla-4.4.8.tar.gz /tmp/
+RUN tar -xvf /tmp/bugzilla-4.4.8.tar.gz -C /var/www/
+RUN ln -s /var/www/bugzilla-4.4.8 /var/www/html
 ADD bugzilla.conf /etc/apache2/sites-available/
 WORKDIR /var/www/html
 ADD checksetup_answers.txt /var/www/html
 
-RUN /usr/bin/perl install-module.pl DateTime::TimeZone
-RUN /usr/bin/perl install-module.pl Email::Sender
+RUN /usr/bin/perl install-module.pl --all
 
 
 RUN ./checksetup.pl
