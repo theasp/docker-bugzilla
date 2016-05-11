@@ -20,6 +20,11 @@ services:
       - MYSQL_DB=bugs
       - MYSQL_USER=root
       - MYSQL_PWD=somepassword
+      - URLBASE=http://some.site.com/
+      - MAINTAINER=user@example.com
+      - MAILFROM=someuser@another.com
+      - SMTP_PASSWORD=anotherpassword
+      - SMTP_USERNAME=andathird@gmail.com
 
   database:
     restart: always

@@ -18,6 +18,16 @@ s/db_user *= *'[a-zA-Z0-9.]\+'/db_user = '${MYSQL_USER:-$DEFAULT_MYSQL_USER}'/
 s/^\$db_pass\s*=\s*.*$/\$db_pass = '${MYSQL_PWD:-$DEFAULT_MYSQL_PWD}';/
 SED
 
+export URLBASE=${URLBASE:-}
+export MAINTAINER=${MAINTAINER:-}
+export MAILFROM=${MAILFROM:-}
+export SMTP_PASSWORD=${SMTP_PASSWORD:-}
+export SMTP_USERNAME=${SMTP_USERNAME:-}
+export SMTP_SSL=${SMTP_SSL:-1}
+export SMTP_SERVER=${SMTP_SERVER:-smtp.gmail.com:465}
+export MAIL_DELIVERY_METHOD="${MAIL_DELIVERY_METHOD:-SMTP}"
+
+perl -p -i -e 's/\$\{([^}]+)\}/defined $ENV{$1} ? $ENV{$1} : $&/eg' data/params
 
 # Verify bugzilla setup
 sleep 5 && ./checksetup.pl checksetup_answers.txt

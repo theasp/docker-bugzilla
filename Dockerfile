@@ -13,6 +13,7 @@ RUN ln -s /var/www/bugzilla-4.4.8 /var/www/html
 ADD bugzilla.conf /etc/apache2/sites-available/
 WORKDIR /var/www/html
 ADD checksetup_answers.txt /var/www/html
+ADD params data/params
 
 RUN /usr/bin/perl install-module.pl --all
 
