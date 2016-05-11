@@ -1,5 +1,5 @@
 # docker-bugzilla
-docker for bugzilla 5.0.2
+docker for bugzilla 4.4
 
 # example docker-compose.yml
 
