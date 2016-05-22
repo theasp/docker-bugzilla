@@ -38,6 +38,7 @@ chown -R www-data:www-data .
 # Remove stall pid file
 rm -f /var/run/apache2/apache2.pid
 
+#activate apache2 rewrite module
 a2enmod rewrite
 
 # Start apache2
