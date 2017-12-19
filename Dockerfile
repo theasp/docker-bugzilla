@@ -37,7 +37,7 @@ RUN ./checksetup.pl --check-modules ; \
   /usr/bin/perl install-module.pl --all ; \
   /usr/bin/perl install-module.pl Net::SMTP::SSL ; \
   /usr/bin/perl install-module.pl IO::Socket::SSL; \
-  ./checksetup.pl \
+  ./checksetup.pl ; \
   a2enmod cgi headers expires && \
   a2ensite bugzilla && \
   a2dissite 000-default
