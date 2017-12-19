@@ -14,8 +14,8 @@ RUN apt-get update && \
         libfile-slurp-perl libencode-detect-perl libmodule-build-perl libnet-ldap-perl libauthen-sasl-perl \
         libtemplate-perl-doc libfile-mimeinfo-perl libhtml-formattext-withlinks-perl libgd-dev \
         libmysqlclient-dev lynx-cur graphviz python-sphinx && \
-    rm -rf /var/lib/apt/lists/* &&
-    rm -rf /var/www/html            
+    rm -rf /var/lib/apt/lists/* && \
+    rm -rf /var/www/html
 
 # Remove DEFAULT apache site
 
