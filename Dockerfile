@@ -22,7 +22,7 @@ RUN apt-get update && \
 # Make Bugzilla install Directory
 # https://ftp.mozilla.org/pub/mozilla.org/webtools/bugzilla-5.0.3.tar.gz
 
-ADD bugzilla-5.0.3.tar.gz /tmp/
+ADD bugzilla-5.0.3.tar.gz /tmp/bugzilla-5.0.3.tar.gz
 
 RUN tar -xvf /tmp/bugzilla-5.0.3.tar.gz -C /var/www/ && \
      ln -s /var/www/bugzilla-5.0.3 /var/www/html
