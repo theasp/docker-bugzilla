@@ -57,8 +57,11 @@ RUN set -ex; \
 # https://ftp.mozilla.org/pub/mozilla.org/webtools/bugzilla-5.0.3.tar.gz
 
 ADD https://ftp.mozilla.org/pub/mozilla.org/webtools/bugzilla-${BUGZILLA_VERSION}.tar.gz /var/www/
-RUN cd /var/www && tar xvfz /var/www/bugzilla-${BUGZILLA_VERSION}.tar.gz
-RUN ln -s /var/www/bugzilla-${BUGZILLA_VERSION} /var/www/html
+RUN set -ex; \
+  cd /var/www; \
+  tar xvfz /var/www/bugzilla-${BUGZILLA_VERSION}.tar.gz; \
+  mv bugzilla-${BUGZILLA_VERSION} html
+
 ADD bugzilla.conf /etc/apache2/sites-available/
 WORKDIR /var/www/html
 
